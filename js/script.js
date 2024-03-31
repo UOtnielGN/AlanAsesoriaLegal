@@ -1,5 +1,15 @@
 // script.js
+document.addEventListener("DOMContentLoaded", function () {
+    const titleContainer = document.getElementById('titleContainer');
+    const title = document.getElementById('title');
 
+    title.addEventListener('click', function () {
+        titleContainer.classList.add('clicked');
+        setTimeout(function () {
+            titleContainer.classList.remove('clicked');
+        }, 1000); // 1000 milisegundos = 1 segundo
+    });
+    
 document.addEventListener("DOMContentLoaded", function () {
     // Animación de desplazamiento suave para los enlaces internos
     const links = document.querySelectorAll('a[href^="#"]');
