@@ -49,6 +49,17 @@ main {
     padding: 20px;
 }
 
+
+/* Estilos para el título al ser clickeado */
+#titleContainer.clicked {
+    background-color: #000; /* Fondo negro */
+}
+
+#titleContainer.clicked #title {
+    color: #eee; /* Letras grises claro */
+    font-size: 2.5em; /* Tamaño de letra aumentado */
+}
+
 /* Secciones */
 .box {
     background-color: #ddd; /* Color de fondo gris */
