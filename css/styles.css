@@ -1,7 +1,6 @@
 /* styles.css */
 
 /* Estilos generales */
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; /* Color de fondo gris claro */
@@ -37,6 +36,8 @@ header {
 /* Título */
 #titleContainer {
     flex-grow: 1; /* Permitir que el título ocupe el espacio restante */
+    border-radius: 5px; /* Agrega bordes redondeados al contenedor */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
 }
 
 #titleContainer:hover #title {
