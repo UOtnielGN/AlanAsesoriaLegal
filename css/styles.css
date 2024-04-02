@@ -39,6 +39,11 @@ header {
     flex-grow: 1; /* Permitir que el título ocupe el espacio restante */
 }
 
+#titleContainer:hover #title {
+    color: #fff; /* Cambia el color del texto a blanco */
+    background-color: #000; /* Cambia el color de fondo a negro */
+}
+
 #title {
     margin: 0;
     font-size: 2em;
