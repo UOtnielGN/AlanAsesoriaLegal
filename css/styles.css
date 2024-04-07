@@ -37,6 +37,19 @@ header {
     width: 50%; /* Ajusta el ancho de la imagen al 50% del contenedor */
     height: auto; /* Mantiene la proporción de aspecto */
 }
+
+.logo {
+    width: 100px; /* Ancho original del logo */
+    height: auto;
+    transition: width 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto de agrandamiento y sombra al pasar el cursor sobre los logos */
+.logo:hover {
+    width: 120px; /* Ancho aumentado del logo */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra con color RGBA */
+}
+
 /* Título */
 #titleContainer {
     flex-grow: 1; /* Permitir que el título ocupe el espacio restante */
