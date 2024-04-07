@@ -33,6 +33,10 @@ header {
     width: 100px; /* Ajustar tamaño según sea necesario */
 }
 
+.blog-image img {
+    width: 50%; /* Ajusta el ancho de la imagen al 50% del contenedor */
+    height: auto; /* Mantiene la proporción de aspecto */
+}
 /* Título */
 #titleContainer {
     flex-grow: 1; /* Permitir que el título ocupe el espacio restante */
