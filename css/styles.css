@@ -38,6 +38,20 @@ header {
     height: auto; /* Mantiene la proporción de aspecto */
 }
 
+/* Estilos para pantallas amplias */
+@media screen and (min-width: 768px) {
+    .blog-image img {
+        width: 20%; /* Cambiar tamaño de imagen al 20% de la pantalla en pantallas amplias */
+    }
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 767px) {
+    .blog-image img {
+        width: 80%; /* Cambiar tamaño de imagen al 80% de la pantalla en pantallas pequeñas */
+    }
+}
+
 .logo {
     width: 100px; /* Ancho original del logo */
     height: auto;
