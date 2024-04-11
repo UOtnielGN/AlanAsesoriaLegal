@@ -3,16 +3,16 @@
 /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Color de fondo gris claro */
-    color: #333; /* Color de texto gris oscuro */
+    background-color: #88a4d9; /* Color de fondo */
+    color: #cbd1da; /* Color de texto gris oscuro */
     margin: 0;
     padding: 0;
 }
 
 /* Cabecera */
 header {
-    background-color: #001f3f; /* Azul marino */
-    color: #fff; /* Color de texto blanco */
+    background-color: #536484; /*  */
+    color: #dde0e6; /* Color de texto plata*/
     padding: 20px;
     display: flex; /* Utilizar flexbox para alinear elementos */
     align-items: center; /* Centrar verticalmente */
@@ -61,7 +61,7 @@ header {
 /* Efecto de agrandamiento y sombra al pasar el cursor sobre los logos */
 .logo:hover {
     width: 120px; /* Ancho aumentado del logo */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra con color RGBA */
+    box-shadow: 0px 0px 10px #2a3242; /* Sombra con color RGBA */
 }
 
 /* Título */
@@ -72,8 +72,8 @@ header {
 }
 
 #titleContainer:hover #title {
-    color: #fff; /* Cambia el color del texto a blanco */
-    background-color: #000; /* Cambia el color de fondo a negro */
+    color: #eef0f3; /* Cambia el color del texto a plateado */
+    background-color: #88a4d9; /* Cambia el color de fondo dando contraste */
 }
 
 #title {
@@ -96,7 +96,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #eef0f3;
     text-decoration: none;
 }
 
@@ -117,7 +117,7 @@ main {
 
 /* Estilos para el título al ser clickeado */
 #titleContainer.clicked {
-    background-color: #000; /* Fondo negro */
+    background-color: #88a4d9; /* Fondo negro */
 }
 
 #titleContainer.clicked #title {
@@ -127,7 +127,7 @@ main {
 
 /* Secciones */
 .box {
-    background-color: #ddd; /* Color de fondo gris */
+    background-color: #a9b2c2; /* Color de fondo gris */
     border-radius: 10px; /* Bordes redondeados */
     padding: 20px;
     margin-bottom: 20px; /* Espacio entre secciones */
@@ -157,20 +157,20 @@ main {
 .blog-post a {
     display: block;
     text-align: center;
-    color: #007bff; /* Color azul */
+    color: #88a4d9; /* Color azul */
     text-decoration: none;
     transition: color 0.3s ease; /* Transición suave al pasar el cursor */
 }
 
 /* Cambio de color al pasar el cursor sobre el enlace "Leer más" */
 .blog-post a:hover {
-    color: #0056b3; /* Cambia el color a un azul más oscuro */
+    color: #847353; /* Cambia el color a un azul más oscuro */
 }
 
 /* Pie de página */
 footer {
-    background-color: #001f3f;
-    color: #fff;
+    background-color: #536484;
+    color: #cbd1da;
     text-align: center;
     padding: 10px 0;
 }
