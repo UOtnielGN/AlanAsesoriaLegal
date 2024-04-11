@@ -129,7 +129,7 @@ main {
 .box {
     background-color: #a9b2c2; /* Color de fondo gris */
     border-radius: 10px; /* Bordes redondeados */
-    padding: 20px;
+    padding: 20em;
     margin-bottom: 20px; /* Espacio entre secciones */
 }
 
