@@ -1,9 +1,9 @@
-# justicaleonlegal
-# Justicia León Legal
+# alanasesorialegal
+# Alan Asesoría Legal
 
-¡Bienvenido al repositorio de Justicia León Legal!
+¡Bienvenido al repositorio de Alan Asesoría Legal!
 
-Este repositorio contiene los archivos y recursos relacionados con la página web de Justicia León Legal, una firma de abogados en San Luis Potosí comprometida con la justicia y la excelencia legal.
+Este repositorio contiene los archivos y recursos relacionados con la página web de Alan Asesoría Legal, una firma de abogados en San Luis Potosí comprometida con la justicia y la excelencia legal.
 
 ## Directorios
 
