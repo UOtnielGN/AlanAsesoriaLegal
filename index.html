@@ -1,105 +1,456 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Justicia León Legal - Abogados en San Luis Potosí</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+    <title>Vázquez y Asociados - Abogados en San Luis Potosí</title>
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #0a0a0a;
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #c9a961;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #c9a961;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e8e8e8;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #c9a961;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #c9a961;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            margin-top: 80px;
+            height: 90vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23121212" width="1200" height="800"/><path fill="%231a1a1a" d="M0 400L50 383.3C100 366.7 200 333.3 300 333.3C400 333.3 500 366.7 600 383.3C700 400 800 400 900 383.3C1000 366.7 1100 333.3 1150 316.7L1200 300V800H1150C1100 800 1000 800 900 800C800 800 700 800 600 800C500 800 400 800 300 800C200 800 100 800 50 800H0V400Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 40px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: #c9a961;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            color: #d4d4d4;
+            font-style: italic;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 45px;
+            background-color: #c9a961;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s;
+            border: 2px solid #c9a961;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: #c9a961;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(201, 169, 97, 0.3);
+        }
+
+        .servicios {
+            max-width: 1200px;
+            margin: 100px auto;
+            padding: 0 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #c9a961;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .servicio-card {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid #2a2a2a;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .servicio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a961, #d4b76f);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .servicio-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-10px);
+            border-color: #c9a961;
+            box-shadow: 0 15px 40px rgba(201, 169, 97, 0.2);
+        }
+
+        .servicio-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #c9a961;
+        }
+
+        .servicio-card p {
+            color: #b8b8b8;
+            line-height: 1.8;
+        }
+
+        .sobre-nosotros {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 100px 40px;
+            text-align: center;
+        }
+
+        .sobre-nosotros-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .sobre-nosotros p {
+            font-size: 20px;
+            line-height: 1.9;
+            color: #b8b8b8;
+            margin-bottom: 25px;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 60px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            color: #c9a961;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #b8b8b8;
+            margin-top: 10px;
+        }
+
+        .contacto {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 0 40px;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contacto-info {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            padding: 40px;
+            border-radius: 10px;
+            border: 1px solid #2a2a2a;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .contacto-info:hover {
+            transform: translateY(-5px);
+            border-color: #c9a961;
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.2);
+        }
+
+        .contacto-item {
+            margin: 0;
+        }
+
+        .contacto-item h3 {
+            color: #c9a961;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .contacto-item p {
+            font-size: 18px;
+            color: #b8b8b8;
+            margin: 8px 0;
+        }
+
+        .contacto-item a {
+            color: #c9a961;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contacto-item a:hover {
+            color: #d4b76f;
+        }
+
+        .cta-contacto {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid #c9a961;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
 <body>
     <header>
-        <div class="logo-left logo">
-            <img src="img/balance.webp" alt="Logo León Izquierda">
-        </div>
-        <div class="highlight-on-hover" id="titleContainer">
-            <h1 class="centered" id="title">Justicia León Legal</h1>
-        </div>
-        <div class="logo-right logo">
-            <img src="img/lion.webp" alt="Logo León Derecha">
-        </div>
         <nav>
-            <ul>
+            <div class="logo">VÁZQUEZ Y ASOCIADOS, ABOGADOS</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#equipo">Nuestro Equipo</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#blog">Nuestro blog</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="servicios" class="box">
-            <h2>Servicios</h2>
-            <p>Somos expertos en resolver casos en materia civil, ofreciendo asesoramiento legal integral en áreas como:
-            </p>
-            <ul>
-                <li>Derecho contractual</li>
-                <li>Propiedad y bienes raíces</li>
-                <li>Responsabilidad civil</li>
-                <li>Arrendamientos</li>
-                <!-- Agrega más servicios según sea necesario -->
-            </ul>
-        </section>
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Vázquez y Asociados</h1>
+            <p>Abogados Especializados en San Luis Potosí</p>
+            <p style="font-size: 18px; font-style: normal;">Experiencia, Confianza y Resultados</p>
+            <a href="#contacto" class="cta-button">Consulta Gratuita</a>
+        </div>
+    </section>
 
-        <section id="equipo" class="box">
-            <h2>Nuestro Equipo</h2>
-            <p>Contamos con un equipo de abogados altamente capacitados y comprometidos con la defensa de nuestros
-                clientes. Nuestra experiencia y dedicación nos distinguen.</p>
-            <!-- Puedes agregar información sobre los miembros del equipo si lo deseas -->
-        </section>
+    <section id="servicios" class="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <h3>Derecho Civil</h3>
+                <p>Contratos, sucesiones, propiedades y resolución de conflictos civiles con asesoría personalizada para proteger sus intereses.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Derecho Mercantil</h3>
+                <p>Constitución de empresas, contratos comerciales y asesoría legal para el crecimiento de su negocio.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Derecho Familiar</h3>
+                <p>Divorcios, custodia, pensiones alimenticias y adopciones. Manejamos casos delicados con profesionalismo y empatía.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Derecho Laboral</h3>
+                <p>Defensa de derechos laborales, despidos injustificados, demandas y asesoría en relaciones laborales.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Derecho Penal</h3>
+                <p>Defensa en procesos penales, amparos y representación legal especializada en el sistema acusatorio.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Derecho Inmobiliario</h3>
+                <p>Compraventa, arrendamiento, regularización de propiedades y resolución de conflictos inmobiliarios.</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="contacto" class="box">
-            <h2>Contacto</h2>
-            <p>Estamos aquí para ayudarte. Contáctanos para programar una consulta o para más información sobre nuestros
-                servicios.</p>
-            <p>Teléfono: [Insertar número de teléfono]</p>
-            <p>Correo electrónico: [Insertar correo electrónico]</p>
-            <!-- Agrega un formulario de contacto si lo deseas -->
-        </section>
-        <!-- Sección de blog -->
-        <section id="blog" class="box">
-            <h2>Blog</h2>
-            <div class="blog-post">
-                <h3>Paracaidistas en mi casa</h3>
-                <p>Descripción breve del artículo sobre paracaidistas que visitaron mi casa.</p>
-                <div class="blog-image" data-link="read-more-1">
-                    <div class="image-container">
-                        <img src="img/blog1.webp" alt="Imagen del artículo 1">
-                    </div>
+    <section id="nosotros" class="sobre-nosotros">
+        <div class="sobre-nosotros-content">
+            <h2 class="section-title">Sobre Nosotros</h2>
+            <p>Vázquez Asociados es un despacho jurídico con amplia experiencia en San Luis Potosí, comprometido con la defensa de los derechos de nuestros clientes.</p>
+            <p>Nuestro equipo de abogados especializados brinda atención personalizada, estrategias legales efectivas y un acompañamiento cercano en cada proceso.</p>
+            <p>Trabajamos con integridad, profesionalismo y dedicación para lograr los mejores resultados en cada caso que nos confían.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Años de Experiencia</span>
                 </div>
-                <a href="#" id="read-more-1">Leer más</a>
-            </div>
-            <div class="blog-post">
-                <h3>Los terrenos de la abuela para quien son</h3>
-                <p>Descripción breve del artículo sobre los terrenos de la abuela y su propiedad.</p>
-                <div class="blog-image" data-link="read-more-2">
-                    <div class="image-container">
-                        <img src="img/blog2.webp" alt="Imagen del artículo 2">
-                    </div>
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Casos Exitosos</span>
                 </div>
-                <a href="#" id="read-more-2">Leer más</a>
-            </div>
-            <div class="blog-post">
-                <h3>La herencia de mi tía</h3>
-                <p>Descripción breve del artículo sobre la herencia dejada por mi tía.</p>
-                <div class="blog-image" data-link="read-more-3">
-                    <div class="image-container">
-                        <img src="img/blog3.webp" alt="Imagen del artículo 3">
-                    </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Clientes Satisfechos</span>
                 </div>
-                <a href="#" id="read-more-3">Leer más</a>
             </div>
-            <!-- Agrega más entradas de blog según sea necesario -->
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section id="contacto" class="contacto">
+        <h2 class="section-title">Contacto</h2>
+        <div class="contacto-grid">
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <h3>📍 Ubicación</h3>
+                    <p>San Luis Potosí, S.L.P.</p>
+                </div>
+            </div>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <h3>📞 Teléfono</h3>
+                    <p><a href="tel:+5244444245340">+52 (444) 424-5340</a></p>
+                </div>
+            </div>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <h3>✉️ Email</h3>
+                    <p><a href="mailto:contacto@vazquezasociados.com">contacto@vazquezasociados.com</a></p>
+                </div>
+            </div>
+            <div class="contacto-info">
+                <div class="contacto-item">
+                    <h3>🕒 Horario</h3>
+                    <p>Lunes a Viernes:</p>
+                    <p>9:00 AM - 7:00 PM</p>
+                    <p>Sábado:</p>
+                    <p>9:00 AM - 2:00 PM</p>
+                </div>
+            </div>
+        </div>
+        <div class="cta-contacto">
+            <a href="https://api.whatsapp.com/send/?phone=52144444245340&text=Hola+he+visto+tu+p%C3%A1gina+deseo+m%C3%A1s+informaci%C3%B3n+sobre+sus+servicios" class="cta-button">Llamar Ahora</a>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Justicia León Legal - Abogados en San Luis Potosí</p>
+        <p>&copy; 2025 Vázquez y Asociados - Abogados. Todos los derechos reservados.</p>
+        <p>San Luis Potosí, México</p>
     </footer>
-
-    <script src="js/script.js"></script> <!-- Si es necesario -->
 </body>
-
 </html>
